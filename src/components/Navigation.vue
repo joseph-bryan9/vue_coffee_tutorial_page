@@ -18,36 +18,46 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
-            <router-link class="nav-link text-uppercase text-expanded" to="/"
-              >Home<span class="sr-only">(current)</span></router-link
-            >
-          </li>
+        <ul class="navbar-nav mx-auto list-inline">
+          <!-- <li class="nav-item active px-lg-4">
+            <router-link class="nav-link text-uppercase text-expanded" to="/">
+              Home
+              <span class="sr-only">(current)</span>
+            </router-link>
+          </li>-->
           <li class="nav-item px-lg-4">
             <router-link
+              v-for="route in routes"
+              :key="route.path"
               class="nav-link text-uppercase text-expanded"
-              to="/about"
-              >About</router-link
+              :to="route.path"
             >
+              {{ route.name }}
+              <!-- <span class="sr-only">(current)</span> -->
+            </router-link>
           </li>
-          ,
+          <!-- <li class="nav-item px-lg-4">
+            <router-link class="nav-link text-uppercase text-expanded" to="/about">About</router-link>
+          </li>,
           <li class="nav-item px-lg-4">
-            <router-link
-              class="nav-link text-uppercase text-expanded"
-              to="/product"
-              >Product</router-link
-            >
+            <router-link class="nav-link text-uppercase text-expanded" to="/product">Product</router-link>
           </li>
           <li class="nav-item px-lg-4">
-            <router-link
-              class="nav-link text-uppercase text-expanded"
-              to="/store"
-              >Store</router-link
-            >
-          </li>
+            <router-link class="nav-link text-uppercase text-expanded" to="/store">Store</router-link>
+          </li>-->
         </ul>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  name: "Navigation",
+  data() {
+    return {
+      routes: this.$router.options.routes,
+    };
+  },
+};
+</script>
