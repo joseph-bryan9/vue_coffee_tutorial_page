@@ -31,23 +31,23 @@ export default {
 @import "https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i";
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2c3e50; */
 }
 
 #nav {
   /* padding: 30px; */
 }
 
-#nav a {
+/* #nav a {
   font-weight: bold;
   color: #2c3e50;
-}
+} */
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #e6a756 !important;
 }
 </style>
